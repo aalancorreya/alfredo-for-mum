@@ -3,16 +3,14 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Chicken, Prawn, Mushroom &amp; Bacon Alfredo &mdash; for Mum</title>
-<meta name="description" content="The pasta Stina asks for by name. A chicken, prawn, mushroom and bacon alfredo, written down properly for Mum." />
-<meta property="og:title" content="Chicken, Prawn, Mushroom & Bacon Alfredo" />
-<meta property="og:description" content="The pasta Stina asks for by name." />
-<meta property="og:type" content="article" />
-<meta property="og:image" content="images/01-hero.png" />
+<title>Recipes for Mum</title>
+<meta name="description" content="A small collection of recipes Aalan is writing down for Mum &mdash; the ones she's asked for, and the ones he wants to remember her teaching him." />
+<meta property="og:title" content="Recipes for Mum" />
+<meta property="og:description" content="Written down so I don't have to keep ringing." />
+<meta property="og:type" content="website" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="image" href="images/01-hero.png" fetchpriority="high">
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,500&family=Inter:wght@500;600&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400;1,6..72,500&family=Inter:wght@500;600&family=Caveat:wght@600&display=swap" rel="stylesheet">
 <style>
   :root {
     --paper: #f5ecdc;
@@ -20,20 +18,17 @@
     --ink: #221710;
     --ink-soft: #4a382a;
     --rule: #c9b89a;
-    --accent: #9c4a2a;        /* terracotta - warm/emotional/voice */
+    --accent: #9c4a2a;
     --accent-deep: #7a3818;
-    --accent-2: #3a4a2a;      /* deep olive - structural only */
+    --accent-2: #3a4a2a;
     --serif: "Newsreader", "EB Garamond", Georgia, "Times New Roman", serif;
     --sans:  "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     --hand:  "Caveat", "Homemade Apple", cursive;
     --frame: 1180px;
     --col:   620px;
-    --rail:  220px;
-    --gutter: 56px;
   }
 
   * { box-sizing: border-box; }
-
   html { overflow-x: clip; }
   html, body {
     margin: 0;
@@ -47,161 +42,27 @@
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
   }
+  p { margin: 0 0 1.1em 0; color: var(--ink); hyphens: auto; }
+  em, i { font-style: italic; }
 
-  /* ---------- centred reading column ---------- */
+  a { color: inherit; text-decoration: none; }
+
   .col {
     max-width: var(--col);
     margin: 0 auto;
     padding: 0 28px;
   }
 
-  /* asymmetric frame: left whitespace > right rail; body shifts off-centre */
-  .frame {
-    max-width: var(--frame);
-    margin: 0 auto;
-    padding: 0 28px;
-    display: grid;
-    grid-template-columns: 1fr;
-    column-gap: var(--gutter);
-  }
-  .frame > .body { max-width: var(--col); }
-  .frame > .rail { display: block; }
-
-  @media (min-width: 1024px) {
-    .frame {
-      /* generous left gutter > right tail; pulls body ~80px left of optical centre */
-      grid-template-columns: 1fr var(--col) var(--rail) 0.6fr;
-      justify-content: start;
-    }
-    .frame > .body { grid-column: 2; }
-    .frame > .rail { grid-column: 3; }
-  }
-
-  /* rail items collapse inline below their parent on mobile */
-  .rail .note,
-  .rail .pullside,
-  .rail .shopnote,
-  .rail .timestrip {
-    font-family: var(--sans);
-    font-size: 12px;
-    line-height: 1.55;
-    color: var(--ink-soft);
-    letter-spacing: 0.02em;
-    margin: 8px 0 32px 0;
-    padding-left: 14px;
-    border-left: 1px solid var(--accent-2);
-  }
-  .rail .note .lbl,
-  .rail .shopnote .lbl,
-  .rail .timestrip .lbl {
-    display: block;
-    font-family: var(--sans);
-    font-size: 10px;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: var(--accent-2);
-    font-weight: 600;
-    margin-bottom: 4px;
-  }
-  .rail .timestrip ol {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    font-family: var(--serif);
-    font-size: 13px;
-    line-height: 1.5;
-    color: var(--ink);
-  }
-  .rail .timestrip ol li {
-    padding: 3px 0;
-    border-bottom: 1px dotted var(--rule);
-  }
-  .rail .timestrip ol li:last-child { border-bottom: none; }
-  .rail .timestrip ol li .t {
-    font-variant-numeric: oldstyle-nums;
-    font-style: italic;
-    color: var(--ink-soft);
-    margin-left: 6px;
-  }
-  .rail .pullside {
-    font-family: var(--serif);
-    font-style: italic;
-    font-size: 22px;
-    line-height: 1.25;
-    color: var(--accent-deep);
-    border-left-color: var(--accent);
-    font-variation-settings: "opsz" 32;
-  }
-  .rail .handnote {
-    font-family: var(--hand);
-    font-size: 22px;
-    color: var(--accent-deep);
-    line-height: 1.2;
-    margin: 4px 0 32px 0;
-    padding-left: 14px;
-    border-left: 1px solid var(--accent);
-  }
-  .rail .handnote .lbl {
-    display: block;
-    font-family: var(--sans);
-    font-size: 10px;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: var(--accent);
-    font-weight: 600;
-    margin-bottom: 4px;
-  }
-  .rail .warn {
-    font-family: var(--serif);
-    font-size: 14px;
-    line-height: 1.5;
-    color: var(--ink);
-    margin: 4px 0 32px 0;
-    padding: 10px 0 10px 14px;
-    border-left: 3px solid var(--accent);
-    background: rgba(156, 74, 42, 0.05);
-  }
-  .rail .warn .lbl {
-    display: block;
-    font-family: var(--sans);
-    font-size: 10px;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: var(--accent);
-    font-weight: 600;
-    margin-bottom: 6px;
-  }
-  .rail .warn b { font-weight: 600; }
-
-  p {
-    margin: 0 0 1.1em 0;
-    font-weight: 400;
-    color: var(--ink);
-    hyphens: auto;
-  }
-  em, i { font-style: italic; }
-  a { color: var(--accent-deep); }
-
-  /* ---------- HERO ---------- */
-  .hero {
-    width: 100vw;
-    height: 100vh;
-    height: 100svh;
-    min-height: 560px;
-    margin: 0;
-    overflow: hidden;
-    position: relative;
-  }
-  .hero img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
-
-  .title-block {
+  /* ---------- HERO (typography only) ---------- */
+  .hero-cover {
+    min-height: 100vh;
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    padding: 92px 28px 24px;
+    padding: 120px 28px 80px;
   }
   .eyebrow {
     font-family: var(--sans);
@@ -210,20 +71,20 @@
     text-transform: uppercase;
     color: var(--accent-2);
     font-weight: 500;
-    margin-bottom: 28px;
+    margin-bottom: 36px;
   }
   h1 {
     font-family: var(--serif);
     font-weight: 600;
-    font-size: clamp(40px, 6.4vw, 78px);
+    font-size: clamp(48px, 8.4vw, 110px);
     font-variation-settings: "opsz" 72;
-    line-height: 1.04;
-    letter-spacing: -0.012em;
-    margin: 0 auto 22px;
+    line-height: 1.02;
+    letter-spacing: -0.018em;
+    margin: 0 auto 32px;
     max-width: 14ch;
     color: var(--ink);
   }
-  h1 .amp {
+  h1 em {
     font-style: italic;
     font-weight: 400;
     color: var(--accent);
@@ -231,30 +92,28 @@
   .dek {
     font-family: var(--serif);
     font-style: italic;
-    font-size: clamp(18px, 1.6vw, 22px);
+    font-size: clamp(20px, 2vw, 26px);
     color: var(--ink-soft);
-    max-width: 38ch;
-    margin: 0 auto 40px;
+    max-width: 32ch;
+    margin: 0 auto;
     font-weight: 400;
-    line-height: 1.5;
-  }
-  .meta {
-    font-family: var(--sans);
-    font-size: 12px;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: var(--ink-soft);
-    font-weight: 500;
-  }
-  .meta span + span::before {
-    content: "  /  ";
-    color: var(--rule);
-    margin: 0 4px;
+    line-height: 1.45;
   }
 
-  /* ---------- INTRO ---------- */
-  .intro { margin-top: 80px; }
-  .intro p:first-child::first-letter {
+  /* hairline */
+  .hairline {
+    width: 80px;
+    height: 1px;
+    background: var(--accent-2);
+    margin: 56px auto;
+    border: 0;
+  }
+
+  /* ---------- LETTER ---------- */
+  .letter {
+    margin: 40px auto 0;
+  }
+  .letter p:first-child::first-letter {
     font-family: var(--serif);
     font-weight: 600;
     font-style: normal;
@@ -267,456 +126,110 @@
     margin-left: -0.04em;
   }
 
-  /* ---------- SECTION HEADINGS ---------- */
-  /* Method spread: large display serif with hanging numeral */
-  h2.display {
-    font-family: var(--serif);
-    font-weight: 600;
-    font-size: clamp(34px, 4.4vw, 56px);
-    font-variation-settings: "opsz" 56;
-    line-height: 1.05;
-    letter-spacing: -0.012em;
-    margin: 0 0 16px 0;
-    color: var(--ink);
-    position: relative;
+  /* ---------- RECIPE LIST ---------- */
+  .recipe-list {
+    max-width: var(--frame);
+    margin: 120px auto 80px;
+    padding: 0 28px;
   }
-  h2.display .num {
-    font-style: italic;
-    font-weight: 400;
-    color: var(--accent-2);
-    margin-right: 0.3em;
-  }
-  /* Reference: small-caps Inter */
-  h2.ref {
+  .recipe-list .ref-head {
     font-family: var(--sans);
     font-weight: 600;
     font-size: 14px;
     letter-spacing: 0.3em;
     text-transform: uppercase;
     color: var(--ink);
-    margin: 0 0 24px 0;
+    margin: 0 0 40px 0;
     padding-bottom: 12px;
     border-bottom: 1px solid var(--accent-2);
   }
-  /* Aside: italic lowercase serif - bumped, with thin top rule */
-  h2.aside {
-    font-family: var(--serif);
-    font-style: italic;
-    font-weight: 400;
-    font-size: clamp(28px, 3vw, 34px);
-    text-transform: lowercase;
-    letter-spacing: 0;
-    color: var(--ink-soft);
-    margin: 0 0 16px 0;
-    padding-top: 16px;
-    border-top: 1px solid var(--accent-2);
+  .recipe {
+    display: block;
+    padding: 48px 0;
+    border-bottom: 1px dotted var(--rule);
+    position: relative;
+    transition: transform 0.2s ease;
   }
-  .kicker {
+  .recipe:last-child { border-bottom: none; }
+  .recipe:hover { transform: translateX(4px); }
+  .recipe:hover .recipe-title { color: var(--accent-deep); }
+
+  .recipe::after { content: ""; display: table; clear: both; }
+
+  .recipe-img {
+    float: right;
+    width: 280px;
+    max-width: 40%;
+    margin: 6px 0 12px 32px;
+  }
+  .recipe-img img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .recipe-num {
     font-family: var(--sans);
     font-size: 11px;
     letter-spacing: 0.32em;
     text-transform: uppercase;
-    color: var(--accent);
+    color: var(--accent-2);
     font-weight: 600;
+    margin-bottom: 14px;
+  }
+  .recipe-title {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 500;
+    font-size: clamp(30px, 4vw, 46px);
+    font-variation-settings: "opsz" 48;
+    line-height: 1.1;
+    letter-spacing: -0.008em;
     margin: 0 0 14px 0;
-  }
-  .section-lede {
-    font-family: var(--serif);
-    font-style: italic;
-    font-size: 1.05em;
-    color: var(--ink-soft);
-    margin: 8px 0 32px 0;
-    max-width: 52ch;
-  }
-
-  /* narrative gaps vs reference gaps */
-  .narrative-gap { margin-top: 140px; }
-  .reference-gap { margin-top: 40px; }
-
-  /* ---------- IMAGES ---------- */
-  .bleed {
-    width: auto;
-    margin-inline: calc(50% - 50vw);
-    margin-top: 64px;
-    margin-bottom: 16px;
-  }
-  .bleed img {
-    width: 100%;
-    height: 78vh;
-    min-height: 380px;
-    max-height: 820px;
-    object-fit: cover;
-    display: block;
-  }
-  /* half-bleed: right side, paired with text on left */
-  .halfbleed {
-    margin-inline: calc(50% - 50vw) 0;
-    margin-top: 24px;
-    margin-bottom: 16px;
-  }
-  .halfbleed img {
-    width: 100%;
-    height: 56vh;
-    min-height: 320px;
-    max-height: 620px;
-    object-fit: cover;
-    display: block;
-  }
-  /* sauce half-bleed: image right, grid left */
-  .sauce-layout {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 32px;
-  }
-  @media (min-width: 1024px) {
-    .sauce-layout {
-      grid-template-columns: 1fr 1fr;
-      gap: 48px;
-      align-items: start;
-    }
-  }
-  .sauce-rightbleed {
-    margin: 0;
-  }
-  .sauce-rightbleed img {
-    width: 100%;
-    height: auto;
-    max-height: 720px;
-    object-fit: cover;
-    display: block;
-  }
-  @media (min-width: 1024px) {
-    .sauce-rightbleed {
-      margin-right: calc(50% - 50vw);
-    }
-    .sauce-rightbleed img { height: 64vh; min-height: 420px; }
-  }
-
-  /* inset image floated within a step paragraph */
-  .inset {
-    width: 100%;
-    max-width: 420px;
-    margin: 4px 0 18px 0;
-    display: block;
-  }
-  .inset img {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
-  .inset figcaption {
-    font-family: var(--sans);
-    font-size: 11px;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: var(--ink-soft);
-    margin-top: 8px;
-    line-height: 1.4;
-  }
-  .inset figcaption .n {
-    color: var(--accent-2);
-    font-weight: 600;
-    margin-right: 8px;
-  }
-  /* tipped-in quarter image */
-  .tipin {
-    width: 100%;
-    max-width: 360px;
-    margin: 0 0 24px 0;
-    transform: rotate(-1.2deg);
-  }
-  .tipin img { width: 100%; height: auto; display: block; }
-
-  .caption {
-    font-family: var(--sans);
-    font-size: 11px;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: var(--ink-soft);
-    text-align: left;
-    margin: 14px auto 56px;
-    max-width: var(--frame);
-    padding: 0 28px;
-    line-height: 1.5;
-    font-variation-settings: "opsz" 14;
-  }
-  .caption .n {
-    color: var(--accent-2);
-    font-weight: 600;
-    margin-right: 12px;
-  }
-
-  /* ---------- INGREDIENTS ---------- */
-  .ing-label {
-    font-family: var(--sans);
-    font-size: 11px;
-    letter-spacing: 0.28em;
-    text-transform: uppercase;
-    color: var(--accent);
-    font-weight: 600;
-    margin: 24px 0 8px 0;
-  }
-  .ing-label:first-child { margin-top: 0; }
-
-  .qty-list {
-    margin: 8px 0 8px 0;
-    padding: 0;
-    list-style: none;
-  }
-  .qty-list li {
-    display: flex;
-    align-items: baseline;
-    gap: 10px;
-    padding: 5px 0;
-  }
-  .qty-list li .name { flex: 0 0 auto; }
-  .qty-list li .leader {
-    flex: 1 1 auto;
-    border-bottom: 1px dotted var(--rule);
-    transform: translateY(-5px);
-    margin: 0 6px;
-  }
-  .qty-list li .qty {
-    flex: 0 0 auto;
-    font-variant-numeric: oldstyle-nums;
-    font-style: italic;
-    color: var(--ink-soft);
-  }
-
-  /* clean tabular two-col list (no leaders) - for the alfredo */
-  .tab-list {
-    margin: 8px 0 8px 0;
-    padding: 0;
-    list-style: none;
-  }
-  .tab-list li {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 18px;
-    padding: 5px 0;
-    align-items: baseline;
-  }
-  .tab-list li .name { font-family: var(--serif); }
-  .tab-list li .qty {
-    font-variant-numeric: tabular-nums oldstyle-nums;
-    font-style: italic;
-    color: var(--ink-soft);
-    text-align: right;
-    min-width: 7ch;
-  }
-
-  .pantry-para {
-    font-style: italic;
-    color: var(--ink-soft);
-    font-size: 0.98em;
-    margin: 6px 0 0 0;
-  }
-
-  /* ---------- METHOD: four pans ---------- */
-  .pans { margin-top: 32px; }
-  .pan {
-    position: relative;
-    margin: 0 0 56px 0;
-    page-break-inside: avoid;
-    break-inside: avoid;
-  }
-  .pan .panhead {
-    display: flex;
-    align-items: baseline;
-    gap: 18px;
-    margin-bottom: 10px;
-  }
-  .pan .pannum {
-    font-family: var(--serif);
-    font-weight: 400;
-    font-style: italic;
-    font-size: 64px;
-    line-height: 0.9;
-    color: var(--accent-2);
-    font-variation-settings: "opsz" 60;
-  }
-  .pan h3 {
-    font-family: var(--serif);
-    font-weight: 600;
-    font-size: 28px;
-    line-height: 1.2;
-    margin: 0;
     color: var(--ink);
+    max-width: 18ch;
+    transition: color 0.2s ease;
   }
-  /* hang the pan number in the left margin only at >=1200px to avoid clipping */
-  @media (min-width: 1200px) {
-    .pan .panhead {
-      display: block;
-    }
-    .pan .pannum {
-      position: absolute;
-      left: -110px;
-      top: -8px;
-      font-size: 110px;
-    }
-    .pan h3 { display: block; }
-  }
-  .pan p { margin: 0 0 0.8em 0; }
-
-  /* ---------- SAUCE 4-UP ---------- */
-  .sauce-spread {
-    max-width: var(--frame);
-    margin: 0 auto;
-    padding: 0 28px;
-  }
-  .sauce-spread h2.display {
-    text-align: left;
-    max-width: 14ch;
-    margin-bottom: 24px;
-  }
-  .sauce-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 32px;
-    margin-top: 32px;
-  }
-  /* modulated 4-up: move i is taller/wider via grid spans; staggered baselines */
-  @media (min-width: 720px) {
-    .sauce-grid {
-      grid-template-columns: 1.6fr 1fr 1fr 1fr;
-      gap: 28px;
-      align-items: start;
-    }
-    .move.feature { padding-top: 20px; }
-    .move.offset  { margin-top: 24px; }
-  }
-  .move {
-    border-top: 1px solid var(--accent-2);
-    padding-top: 14px;
-  }
-  .move .mvn {
+  .recipe-dek {
     font-family: var(--serif);
     font-style: italic;
-    font-weight: 400;
-    font-size: 64px;
-    line-height: 1;
-    color: var(--accent-2);   /* structural - olive */
-    display: block;
-    margin-bottom: 6px;
-    font-variation-settings: "opsz" 60;
-  }
-  .move.feature .mvn {
-    font-size: 96px;
-  }
-  .move .mvl {
-    font-family: var(--sans);
-    font-size: 11px;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: var(--accent-2);
-    font-weight: 600;
-    display: block;
-    margin-bottom: 10px;
-  }
-  .move p {
-    font-size: 16px;
-    line-height: 1.5;
-    margin: 0;
-  }
-  .move.feature p { font-size: 17px; }
-  @media (max-width: 719px) {
-    .move .mvn { display: none; }
-    .move {
-      border-top: none;
-      padding-top: 0;
-      padding-left: 0;
-    }
-    .move .mvl {
-      font-size: 12px;
-      border-top: 1px solid var(--accent-2);
-      padding-top: 10px;
-    }
-  }
-
-  /* ---------- HAIRLINE RULE ---------- */
-  .hairline {
-    width: 80px;
-    height: 1px;
-    background: var(--accent-2);
-    margin: 56px auto;
-    border: 0;
-  }
-
-  /* ---------- BRINGING IT TOGETHER ---------- */
-  .bringing {
-    max-width: var(--col);
-    margin: 96px auto 0;
-    padding: 0 28px;
-  }
-  .bringing p {
-    font-size: 1.02em;
-    line-height: 1.6;
-  }
-
-  /* ---------- NOTES FOOTER ---------- */
-  .notes-block {
-    max-width: var(--frame);
-    margin: 120px auto 0;
-    padding: 0 28px;
-  }
-  .notes-block .ref {
-    margin-bottom: 32px;
-  }
-  .notes-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 36px;
-  }
-  @media (min-width: 720px) {
-    .notes-grid { grid-template-columns: repeat(3, 1fr); gap: 40px; }
-  }
-  .notes-grid h3 {
-    font-family: var(--serif);
-    font-style: italic;
-    font-weight: 400;
     font-size: 20px;
-    margin: 0 0 8px 0;
-    color: var(--ink);
+    color: var(--ink-soft);
+    max-width: 36ch;
+    line-height: 1.45;
+    margin: 0 0 16px 0;
   }
-  .notes-grid p {
-    font-size: 16px;
-    line-height: 1.55;
-    margin: 0 0 0.8em 0;
-    color: var(--ink);
+  .recipe-meta {
+    font-family: var(--sans);
+    font-size: 12px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    font-weight: 500;
   }
-  .notes-grid .imperatives {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    font-family: var(--serif);
-    font-size: 16px;
-    line-height: 1.5;
+  .recipe-meta span + span::before {
+    content: "  /  ";
+    color: var(--rule);
+    margin: 0 4px;
   }
-  .notes-grid .imperatives li {
-    padding: 6px 0;
-    border-bottom: 1px dotted var(--rule);
-  }
-  .notes-grid .imperatives li:last-child { border-bottom: none; }
 
-  /* ---------- CLOSING ---------- */
-  .closing {
-    margin: 100px auto 40px;
+  /* ---------- FOOTER ---------- */
+  .colophon {
     text-align: center;
+    margin: 100px auto 60px;
+    padding: 0 28px;
   }
-  .closing p {
+  .colophon p {
     font-family: var(--serif);
     font-style: italic;
     font-size: 1.05em;
     color: var(--ink-soft);
-    max-width: 46ch;
-    margin: 0 auto 28px;
-    line-height: 1.6;
+    margin: 0 auto 24px;
   }
   .signoff {
     font-family: var(--hand);
     font-size: 40px;
     color: var(--accent);
-    margin: 12px 0 80px;
+    margin: 12px 0 60px;
     line-height: 1.2;
     display: inline-block;
     padding: 6px 16px;
@@ -724,333 +237,80 @@
     transform-origin: left center;
   }
 
-  /* ---------- RESPONSIVE ---------- */
   @media (max-width: 720px) {
     body { font-size: 18px; line-height: 1.6; }
-    .hero { height: 88vh; height: 88svh; min-height: 460px; }
-    .title-block { padding: 60px 22px 16px; }
-    .meta { font-size: 11px; letter-spacing: 0.18em; }
-    .intro { margin-top: 56px; }
-    .intro p:first-child::first-letter { font-size: 4.4em; padding-right: 10px; }
-    .bleed img { height: 60vh; min-height: 280px; }
-    .halfbleed img { height: 44vh; min-height: 240px; }
-    .pan .pannum { font-size: 56px; }
-    .pan h3 { font-size: 22px; }
+    .hero-cover { padding: 80px 22px 60px; min-height: 88svh; }
+    .recipe-list { margin-top: 80px; }
+    .recipe { padding: 32px 0; }
+    .recipe-img { float: none; width: 100%; max-width: 100%; margin: 0 0 18px 0; }
+    .recipe-title { max-width: 100%; }
     .signoff { font-size: 34px; }
-    .qty-list li { flex-wrap: wrap; }
-    .qty-list li .leader { display: none; }
-    .qty-list li .qty { margin-left: auto; }
-    .narrative-gap { margin-top: 88px; }
-    .closing { margin-top: 96px; }
-  }
-  @media (min-width: 1280px) {
-    .bleed img { max-height: 880px; }
+    .letter p:first-child::first-letter { font-size: 4.4em; padding-right: 10px; }
   }
 
-  /* ---------- PRINT ---------- */
   @media print {
-    :root { --paper: #ffffff; --ink: #1a120c; }
-    body { background: #fff; font-size: 11pt; line-height: 1.5; }
-    .hero { display: none; }
-    .bleed, .halfbleed { margin-top: 12pt; margin-bottom: 6pt; }
-    .bleed img, .halfbleed img, .inset img, .tipin img, .sauce-rightbleed img {
-      height: auto;
-      max-height: 2.2in;
-      min-height: 0;
-      width: auto;
-      max-width: 100%;
-    }
-    .caption { margin-bottom: 12pt; }
-    .kicker { margin-top: 18pt; }
-    h1 { font-size: 28pt; }
-    h2.display { font-size: 18pt; }
-    .pan, .move, .notes-grid > * { page-break-inside: avoid; }
-    .sauce-grid { page-break-inside: avoid; }
-    .signoff { font-size: 24pt; }
-    a { color: var(--ink); text-decoration: none; }
-    .rail { display: none; }
+    body { background: #fff; font-size: 11pt; }
+    .hero-cover { min-height: 0; padding: 24pt 0; }
+    .recipe-img { max-width: 1.8in; }
+    a { color: var(--ink); }
+    .recipe { page-break-inside: avoid; }
   }
 </style>
 </head>
 <body>
 <main>
 
-<!-- ============ HERO ============ -->
-<figure class="hero">
-  <img src="images/01-hero.png" alt="Overhead bowl of creamy fettuccine alfredo with prawns and chicken" width="2000" height="1125" fetchpriority="high" decoding="async" />
-</figure>
-
-<header class="title-block col">
-  <div class="eyebrow">for Mum's kitchen</div>
-  <h1>Chicken, Prawn, Mushroom <span class="amp">&amp;</span> Bacon Alfredo</h1>
-  <p class="dek">The pasta Stina asks for by name.</p>
-  <div class="meta">
-    <span>Serves 3-4</span>
-    <span>Prep 25 min</span>
-    <span>Cook 25 min</span>
-  </div>
-</header>
-
-<!-- ============ INTRO (now first - Aalan's voice opens) ============ -->
-<section class="col intro">
-  <p>Mum &mdash; this one is for you. I keep making it for Stina on the nights I want the kitchen to smell like a Sunday, and I wanted you to have it written down properly so you don't have to ask me again over the phone.</p>
-
-  <p>I made this the first time for Stina on a Wednesday night that wasn't meant to be anything special, and she asked for it again the next week, and the week after that. It is the dish that taught me you were right about browned butter &mdash; that you have to stand at the pan and watch it, that it doesn't forgive a wandering eye. Every time I cook it I think of you in our old kitchen, telling me to slow down.</p>
+<!-- ============ HERO COVER (typography only) ============ -->
+<section class="hero-cover">
+  <div class="eyebrow">from my kitchen to yours</div>
+  <h1>Recipes <em>for</em> Mum</h1>
+  <p class="dek">Written down so I don't have to keep ringing.</p>
 </section>
 
 <hr class="hairline" />
 
-<!-- ============ INGREDIENTS with marginalia (timing folded into rail) ============ -->
-<section class="frame narrative-gap">
-  <div class="body">
-    <div class="kicker">For three to four serves</div>
-    <h2 class="ref">Ingredients</h2>
-    <p class="section-lede">The proteins are forgiving; the sauce ratios are not, so weigh the butter and the flour properly. <em>For two: halve everything except the garlic.</em></p>
+<!-- ============ LETTER ============ -->
+<section class="col letter">
+  <p>This is a small set of recipes I'm writing down for Mum &mdash; the ones she's asked me for, and the ones I want to remember her teaching me. Some of them are mine now and some of them will always be hers, and the difference matters less than I used to think.</p>
 
-    <h3 class="ing-label">The main</h3>
-    <ul class="qty-list">
-      <li><span class="name">Fettuccine</span><span class="leader"></span><span class="qty">300-400 g</span></li>
-      <li><span class="name">Chicken breast, sliced</span><span class="leader"></span><span class="qty">2 breasts</span></li>
-      <li><span class="name">Prawns, peeled &amp; cleaned</span><span class="leader"></span><span class="qty">300-400 g</span></li>
-      <li><span class="name">Bacon, diced</span><span class="leader"></span><span class="qty">150-200 g</span></li>
-      <li><span class="name">Mushrooms, sliced</span><span class="leader"></span><span class="qty">250 g</span></li>
-      <li><span class="name">Garlic, minced</span><span class="leader"></span><span class="qty">3 cloves</span></li>
-    </ul>
-
-    <h3 class="ing-label">The alfredo sauce</h3>
-    <ul class="tab-list">
-      <li><span class="name">Butter</span><span class="qty">2 tbsp</span></li>
-      <li><span class="name">Plain flour</span><span class="qty">2 tbsp</span></li>
-      <li><span class="name">Milk</span><span class="qty">2 cups</span></li>
-      <li><span class="name">Thickened cream</span><span class="qty">1/2 - 1 cup</span></li>
-      <li><span class="name">Parmesan, freshly grated</span><span class="qty">1 cup</span></li>
-      <li><span class="name">Salt &amp; pepper</span><span class="qty">to taste</span></li>
-    </ul>
-
-    <h3 class="ing-label">Pantry check</h3>
-    <p class="pantry-para">Plain flour, olive oil, paprika, garlic powder, italian herbs, chilli flakes (optional), salt and pepper &mdash; check the cupboard.</p>
-  </div>
-
-  <aside class="rail">
-    <div class="timestrip">
-      <span class="lbl">Timeline</span>
-      <ol>
-        <li>Chicken, air fryer<span class="t">10-14 min</span></li>
-        <li>Bacon, dry pan<span class="t">5-8 min</span></li>
-        <li>Mushrooms, same pan<span class="t">5-7 min</span></li>
-        <li>Prawns, hot pan<span class="t">1-2 min/side</span></li>
-        <li>Roux<span class="t">1 min</span></li>
-        <li>White sauce<span class="t">5-8 min</span></li>
-        <li>Final toss<span class="t">1-2 min</span></li>
-      </ol>
-    </div>
-    <div class="shopnote">
-      <span class="lbl">At the deli</span>
-      Wedge of parmesan, not the shaker. Grate it yourself.
-    </div>
-    <div class="shopnote">
-      <span class="lbl">At the fish counter</span>
-      Ask for prawns peeled and deveined. Save yourself ten minutes.
-    </div>
-    <div class="shopnote">
-      <span class="lbl">Bacon</span>
-      Streaky or shortcut, your call. Streaky renders sweeter.
-    </div>
-    <div class="shopnote">
-      <span class="lbl">Pasta water</span>
-      A tablespoon of salt in a big pot &mdash; it should taste like the sea.
-    </div>
-  </aside>
+  <p>I'll add to this slowly. A new recipe goes up when one is worth keeping &mdash; not before. Each is a love letter that happens to contain instructions, and they're meant to be read at least as much as they're meant to be cooked.</p>
 </section>
 
-<!-- ============ MISE EN PLACE: half-bleed ============ -->
-<figure class="halfbleed">
-  <img src="images/03-mise-en-place.png" alt="Flat lay of all ingredients on a wooden surface" width="1920" height="1080" loading="lazy" decoding="async" />
-</figure>
-<p class="caption"><span class="n">03</span>Mise en place &mdash; lay everything out before the pan goes on.</p>
+<!-- ============ RECIPE LIST ============ -->
+<section class="recipe-list">
+  <h2 class="ref-head">The Collection</h2>
 
-<!-- ============ THE FOUR PANS ============ -->
-<section class="frame narrative-gap">
-  <div class="body">
-    <div class="kicker">First, the proteins</div>
-    <h2 class="display">The four pans</h2>
-    <p class="section-lede">Chicken in the air fryer first; while it rests, bacon then mushrooms in the same skillet (the bacon fat does a lot of the work for the mushrooms); prawns last so they hit the table hot.</p>
-
-    <div class="pans">
-
-      <article class="pan">
-        <div class="panhead">
-          <span class="pannum">1</span>
-          <h3>The chicken</h3>
-        </div>
-        <figure class="inset">
-          <img src="images/04-chicken-marinated.png" alt="Raw sliced chicken in a dark bowl with paprika marinade" width="1600" height="1200" loading="lazy" decoding="async" />
-          <figcaption><span class="n">01</span>Paprika does most of the colour work.</figcaption>
-        </figure>
-        <p>Slice the breasts thin on the diagonal and toss with a tablespoon of olive oil, a teaspoon each of garlic powder and paprika, half a teaspoon of italian herbs, a teaspoon or two of lemon juice, and salt and pepper. Rest twenty to thirty minutes &mdash; two to four hours is better.</p>
-        <p>Air fryer at 190&deg;C, single layer, ten to fourteen minutes, flipping halfway. Done at golden edges and 75&deg;C internal.</p>
-      </article>
-
-      <article class="pan">
-        <div class="panhead">
-          <span class="pannum">2</span>
-          <h3>The bacon</h3>
-        </div>
-        <figure class="inset">
-          <img src="images/06-bacon-rendering.png" alt="Diced bacon rendering in a cast-iron pan" width="1600" height="1200" loading="lazy" decoding="async" />
-          <figcaption><span class="n">02</span>Slow render, golden edges, fat saved for what comes next.</figcaption>
-        </figure>
-        <p>Medium heat, dry pan, no oil &mdash; the bacon has plenty. Five to eight minutes, stirring now and again, until the edges crisp and the fat renders into a glossy little pool. Lift onto paper towel and save a generous spoon of the rendered fat for the mushrooms.</p>
-      </article>
-
-      <article class="pan">
-        <div class="panhead">
-          <span class="pannum">3</span>
-          <h3>The mushrooms</h3>
-        </div>
-        <figure class="inset">
-          <img src="images/07-mushrooms-browning.png" alt="Sliced mushrooms browning in a pan" width="1600" height="1200" loading="lazy" decoding="async" />
-          <figcaption><span class="n">03</span>A crowded pan steams; an uncrowded pan browns.</figcaption>
-        </figure>
-        <p>Into the same pan, in the saved bacon fat or a knob of butter, lay the sliced mushrooms in a single layer and &mdash; this is the part everyone gets wrong &mdash; leave them alone. Let them brown properly on one side before you stir. Add 1 clove of minced garlic right at the end so it perfumes the pan without burning, and finish with 1/2 tsp of lemon juice while the pan is still hot. Season, and set aside.</p>
-      </article>
-
-      <article class="pan">
-        <div class="panhead">
-          <span class="pannum">4</span>
-          <h3>The prawns</h3>
-        </div>
-        <figure class="inset">
-          <img src="images/05-prawns-searing.png" alt="Prawns searing in a pan with garlic butter and lemon" width="1600" height="1200" loading="lazy" decoding="async" />
-          <figcaption><span class="n">04</span>Garlic butter, a squeeze of lemon, a pan that is properly hot.</figcaption>
-        </figure>
-        <p>Marinate with a tablespoon of olive oil, two cloves of finely chopped garlic, half a teaspoon of paprika, a pinch of chilli flakes if you like heat, a teaspoon of lemon juice, salt and pepper. Fifteen to twenty minutes only &mdash; any longer and the lemon starts to cure them.</p>
-        <p>Pan medium-high, oil or butter, single layer, one to two minutes a side. They are done the second they curl into a loose C-shape.</p>
-      </article>
-
-    </div>
-  </div>
-
-  <aside class="rail">
-    <div class="pullside">The prawns are done in ninety seconds &mdash; don't walk away.</div>
-    <div class="handnote">
-      <span class="lbl">A note from me &mdash;</span>
-      save a spoon of the bacon fat &mdash; the mushrooms cook in it.
-    </div>
-    <div class="note">
-      <span class="lbl">Keep them warm</span>
-      A foil tent on the chicken, a low oven for the rest. Cold proteins drag the sauce down.
-    </div>
-    <div class="note">
-      <span class="lbl">Reserve pasta water</span>
-      Half a cup, set aside before you drain. You'll want it at the toss.
-    </div>
-  </aside>
-</section>
-
-<!-- ============ THE SAUCE: own spread, with right-bleed image ============ -->
-<section class="sauce-spread narrative-gap">
-  <div class="kicker">Then, the sauce</div>
-  <h2 class="display">The sauce, in four moves</h2>
-  <p class="section-lede" style="max-width: 56ch;">Low to medium heat the entire way. Each move is short and forgiving as long as you don't let it boil hard.</p>
-
-  <div class="sauce-layout">
-    <div class="sauce-grid">
-      <div class="move feature">
-        <span class="mvn">i</span>
-        <span class="mvl">Roux</span>
-        <p>Two tablespoons of butter melted on low to medium, then two tablespoons of flour stirred in. One minute, smooth pale paste. Don't let it brown &mdash; this is the foundation for everything that comes after, so take the minute and watch it.</p>
-      </div>
-      <div class="move">
-        <span class="mvn">ii</span>
-        <span class="mvl">Milk</span>
-        <p>Two cups of milk, a splash at a time, whisking continuously. Patience gives you a glossy sauce. If it tightens, stream in more milk slowly.</p>
-      </div>
-      <div class="move offset">
-        <span class="mvn">iii</span>
-        <span class="mvl">Cream</span>
-        <p>Half to one cup of thickened cream, gentle low heat, stirred through. A soft simmer, never a rolling boil.</p>
-      </div>
-      <div class="move">
-        <span class="mvn">iv</span>
-        <span class="mvl">Cheese</span>
-        <p>One cup of freshly grated parmesan, a handful at a time, stirring each addition through until it melts. Salt and pepper to taste.</p>
-      </div>
-    </div>
-    <figure class="sauce-rightbleed">
-      <img src="images/02-plated.png" alt="A fork lifting strands of creamy alfredo with steam rising" width="2000" height="1125" loading="lazy" decoding="async" />
+  <a class="recipe" href="recipes/alfredo.html">
+    <figure class="recipe-img">
+      <img src="images/alfredo/01-hero.png" alt="Overhead bowl of creamy fettuccine alfredo with prawns and chicken" width="1600" height="1067" loading="lazy" decoding="async" />
     </figure>
-  </div>
-</section>
+    <div class="recipe-num">No. 01</div>
+    <h3 class="recipe-title">Chicken, Prawn, Mushroom &amp; Bacon Alfredo</h3>
+    <p class="recipe-dek">The pasta Stina asks for by name.</p>
+    <div class="recipe-meta">
+      <span>Serves 3-4</span>
+      <span>50 min</span>
+    </div>
+  </a>
 
-<!-- ============ BRINGING IT TOGETHER ============ -->
-<section class="bringing">
-  <div class="kicker">Bringing it together</div>
-  <p>Drain the pasta when it's just shy of al dente, keeping that half cup of water aside. <em>Toss the bacon through the pasta first</em> &mdash; tip the pasta into the warm pan with the bacon so every strand picks up the salt and fat. Then everything &mdash; chicken, prawns, mushrooms &mdash; goes into the sauce, and the bacon-laced pasta tips in after. Fold gently, and if it feels tight loosen with a splash of pasta water and another small splash of milk until it moves like silk. Serve straight away, in warm bowls.</p>
-</section>
-
-<!-- ============ LEMON ASIDE with tipin ============ -->
-<section class="frame narrative-gap">
-  <div class="body">
-    <div class="kicker">A note on the lemon</div>
-    <h2 class="aside">three places, three small amounts</h2>
-    <figure class="tipin">
-      <img src="images/08-lemons.png" alt="Halved lemons on linen with a knife" width="1600" height="1200" loading="lazy" decoding="async" />
+  <a class="recipe" href="recipes/valadi-soup.html">
+    <figure class="recipe-img">
+      <img src="images/valadi-soup/01-hero.png" alt="Overhead bowl of greenish-brown oxtail soup with a piece of oxtail on top" width="1600" height="1067" loading="lazy" decoding="async" />
     </figure>
-    <p>Lemon shows up in three places and each appearance is more restrained than you would think. One to two teaspoons in the chicken marinade. One teaspoon in the prawn marinade, and only for fifteen to twenty minutes. And, optionally, half a teaspoon to a teaspoon stirred through the finished sauce right at the end on low heat.</p>
-    <p>To finish, scatter a little lemon zest and chopped parsley over each bowl just before you bring them to the table.</p>
-  </div>
-
-  <aside class="rail">
-    <div class="warn">
-      <span class="lbl">a small warning</span>
-      <b>Too much lemon, or boiling the sauce after the lemon goes in, will split the cream.</b> Keep the heat low and the lemon small.
+    <div class="recipe-num">No. 02</div>
+    <h3 class="recipe-title">Mum's Anglo-Indian Oxtail / Valadi Soup</h3>
+    <p class="recipe-dek">The greenish-brown one &mdash; the way you used to make it on cold nights.</p>
+    <div class="recipe-meta">
+      <span>Serves 4</span>
+      <span>50 min</span>
     </div>
-    <div class="note">
-      <span class="lbl">Zest first, juice second</span>
-      Zest the lemon before you cut it. Zesting a halved lemon is a small misery you can avoid.
-    </div>
-    <div class="note">
-      <span class="lbl">Parsley</span>
-      Flat-leaf, chopped just before serving. Chop it any earlier and it bruises.
-    </div>
-  </aside>
+  </a>
 </section>
 
-<hr class="hairline" />
-
-<!-- ============ NOTES FOOTER ============ -->
-<section class="notes-block">
-  <h2 class="ref">Notes</h2>
-  <div class="notes-grid">
-
-    <div>
-      <h3>The imperatives</h3>
-      <ul class="imperatives">
-        <li>Salt the water like the sea.</li>
-        <li>Cook pasta al dente.</li>
-        <li>Reserve half a cup of pasta water.</li>
-        <li>Bacon through the pasta first; everything else through the sauce.</li>
-      </ul>
-    </div>
-
-    <div>
-      <h3>Texture rescue</h3>
-      <p>If the sauce is too thick before the pasta goes in, stream more milk on low heat. If it tightens after &mdash; and it usually does &mdash; add a ladle of pasta water and a splash of milk and toss. Aim for smooth, silky, glossy.</p>
-    </div>
-
-    <div>
-      <h3>To serve</h3>
-      <p>Fresh parsley, a snowfall of extra parmesan, plenty of cracked black pepper, warm garlic bread, and a small lemon-dressed salad to cut through the richness.</p>
-    </div>
-
-  </div>
-</section>
-
-<!-- ============ CLOSING ============ -->
-<section class="col closing">
-  <p>And if anything's unclear, ring me &mdash; I'd rather walk you through it than have you guess.</p>
-  <div class="signoff">for Mum &mdash; Aalan</div>
+<!-- ============ FOOTER ============ -->
+<section class="colophon">
+  <p>More to come, slowly.</p>
+  <div class="signoff">&mdash; Aalan</div>
 </section>
 
 </main>

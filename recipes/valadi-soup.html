@@ -1,0 +1,1031 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Mum's Anglo-Indian Oxtail / Valadi Soup &mdash; for Mum</title>
+<meta name="description" content="The greenish-brown one. Mum's Anglo-Indian oxtail soup &mdash; valadi &mdash; written down properly so I don't have to ring." />
+<meta property="og:title" content="Mum's Anglo-Indian Oxtail / Valadi Soup" />
+<meta property="og:description" content="The greenish-brown one &mdash; the way you used to make it on cold nights." />
+<meta property="og:type" content="article" />
+<meta property="og:image" content="../images/valadi-soup/01-hero.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="image" href="../images/valadi-soup/01-hero.png" fetchpriority="high">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,500&family=Inter:wght@500;600&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #f5ecdc;
+    --paper-warm: #f1e6d2;
+    --ink: #221710;
+    --ink-soft: #4a382a;
+    --rule: #c9b89a;
+    --accent: #9c4a2a;
+    --accent-deep: #7a3818;
+    --accent-2: #3a4a2a;
+    --serif: "Newsreader", "EB Garamond", Georgia, "Times New Roman", serif;
+    --sans:  "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --hand:  "Caveat", "Homemade Apple", cursive;
+    --frame: 1180px;
+    --col:   620px;
+    --rail:  220px;
+    --gutter: 56px;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { overflow-x: clip; }
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--serif);
+    font-size: 19px;
+    line-height: 1.55;
+    font-variation-settings: "opsz" 19;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  .col {
+    max-width: var(--col);
+    margin: 0 auto;
+    padding: 0 28px;
+  }
+
+  .frame {
+    max-width: var(--frame);
+    margin: 0 auto;
+    padding: 0 28px;
+    display: grid;
+    grid-template-columns: 1fr;
+    column-gap: var(--gutter);
+  }
+  .frame > .body { max-width: var(--col); }
+  .frame > .rail { display: block; }
+
+  @media (min-width: 1024px) {
+    .frame {
+      grid-template-columns: 1fr var(--col) var(--rail) 0.6fr;
+      justify-content: start;
+    }
+    .frame > .body { grid-column: 2; }
+    .frame > .rail { grid-column: 3; }
+  }
+
+  .rail .note,
+  .rail .pullside,
+  .rail .shopnote,
+  .rail .timestrip,
+  .rail .sidephoto {
+    font-family: var(--sans);
+    font-size: 12px;
+    line-height: 1.55;
+    color: var(--ink-soft);
+    letter-spacing: 0.02em;
+    margin: 8px 0 32px 0;
+    padding-left: 14px;
+    border-left: 1px solid var(--accent-2);
+  }
+  .rail .note .lbl,
+  .rail .shopnote .lbl,
+  .rail .timestrip .lbl {
+    display: block;
+    font-family: var(--sans);
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--accent-2);
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+  .rail .timestrip ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-family: var(--serif);
+    font-size: 13px;
+    line-height: 1.5;
+    color: var(--ink);
+  }
+  .rail .timestrip ol li {
+    padding: 3px 0;
+    border-bottom: 1px dotted var(--rule);
+  }
+  .rail .timestrip ol li:last-child { border-bottom: none; }
+  .rail .timestrip ol li .t {
+    font-variant-numeric: oldstyle-nums;
+    font-style: italic;
+    color: var(--ink-soft);
+    margin-left: 6px;
+  }
+  .rail .pullside {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 22px;
+    line-height: 1.25;
+    color: var(--accent-deep);
+    border-left-color: var(--accent);
+    font-variation-settings: "opsz" 32;
+  }
+  .rail .handnote {
+    font-family: var(--hand);
+    font-size: 22px;
+    color: var(--accent-deep);
+    line-height: 1.2;
+    margin: 4px 0 32px 0;
+    padding-left: 14px;
+    border-left: 1px solid var(--accent);
+  }
+  .rail .handnote .lbl {
+    display: block;
+    font-family: var(--sans);
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+  .rail .warn {
+    font-family: var(--serif);
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--ink);
+    margin: 4px 0 32px 0;
+    padding: 10px 0 10px 14px;
+    border-left: 3px solid var(--accent);
+    background: rgba(156, 74, 42, 0.05);
+  }
+  .rail .warn .lbl {
+    display: block;
+    font-family: var(--sans);
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+  .rail .warn b { font-weight: 600; }
+  .rail .sidephoto { padding-left: 0; border-left: none; }
+  .rail .sidephoto img { width: 100%; height: auto; display: block; }
+  .rail .sidephoto figcaption {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 13px;
+    color: var(--ink-soft);
+    margin-top: 8px;
+    line-height: 1.4;
+  }
+
+  p {
+    margin: 0 0 1.1em 0;
+    font-weight: 400;
+    color: var(--ink);
+    hyphens: auto;
+  }
+  em, i { font-style: italic; }
+  a { color: var(--accent-deep); }
+
+  /* HERO */
+  .hero {
+    width: 100vw;
+    height: 100vh;
+    height: 100svh;
+    min-height: 560px;
+    margin: 0;
+    overflow: hidden;
+    position: relative;
+  }
+  .hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .title-block {
+    text-align: center;
+    padding: 92px 28px 24px;
+  }
+  .eyebrow {
+    font-family: var(--sans);
+    font-size: 12px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--accent-2);
+    font-weight: 500;
+    margin-bottom: 28px;
+  }
+  h1 {
+    font-family: var(--serif);
+    font-weight: 600;
+    font-size: clamp(40px, 6.4vw, 78px);
+    font-variation-settings: "opsz" 72;
+    line-height: 1.04;
+    letter-spacing: -0.012em;
+    margin: 0 auto 22px;
+    max-width: 16ch;
+    color: var(--ink);
+  }
+  h1 .slash {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--accent-2);
+    margin: 0 0.12em;
+  }
+  .dek {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: clamp(18px, 1.6vw, 22px);
+    color: var(--ink-soft);
+    max-width: 42ch;
+    margin: 0 auto 40px;
+    font-weight: 400;
+    line-height: 1.5;
+  }
+  .meta {
+    font-family: var(--sans);
+    font-size: 12px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    font-weight: 500;
+  }
+  .meta span + span::before {
+    content: "  /  ";
+    color: var(--rule);
+    margin: 0 4px;
+  }
+
+  /* INTRO */
+  .intro { margin-top: 80px; }
+  .intro p:first-child::first-letter {
+    font-family: var(--serif);
+    font-weight: 600;
+    font-style: normal;
+    float: left;
+    font-size: 5.6em;
+    line-height: 0.86;
+    padding: 8px 14px 0 0;
+    color: var(--accent);
+    margin-top: -0.05em;
+    margin-left: -0.04em;
+  }
+
+  /* HEADINGS */
+  h2.display {
+    font-family: var(--serif);
+    font-weight: 600;
+    font-size: clamp(34px, 4.4vw, 56px);
+    font-variation-settings: "opsz" 56;
+    line-height: 1.05;
+    letter-spacing: -0.012em;
+    margin: 0 0 16px 0;
+    color: var(--ink);
+    position: relative;
+  }
+  h2.display .num {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--accent-2);
+    margin-right: 0.3em;
+  }
+  h2.ref {
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--ink);
+    margin: 0 0 24px 0;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--accent-2);
+  }
+  h2.aside {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 400;
+    font-size: clamp(28px, 3vw, 34px);
+    text-transform: lowercase;
+    letter-spacing: 0;
+    color: var(--ink-soft);
+    margin: 0 0 16px 0;
+    padding-top: 16px;
+    border-top: 1px solid var(--accent-2);
+  }
+  .kicker {
+    font-family: var(--sans);
+    font-size: 11px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 600;
+    margin: 0 0 14px 0;
+  }
+  .section-lede {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 1.05em;
+    color: var(--ink-soft);
+    margin: 8px 0 32px 0;
+    max-width: 52ch;
+  }
+
+  .narrative-gap { margin-top: 140px; }
+  .reference-gap { margin-top: 40px; }
+
+  /* IMAGES */
+  .bleed {
+    width: auto;
+    margin-inline: calc(50% - 50vw);
+    margin-top: 64px;
+    margin-bottom: 16px;
+  }
+  .bleed img {
+    width: 100%;
+    height: 78vh;
+    min-height: 380px;
+    max-height: 820px;
+    object-fit: cover;
+    display: block;
+  }
+  .halfbleed {
+    margin-inline: calc(50% - 50vw) 0;
+    margin-top: 24px;
+    margin-bottom: 16px;
+  }
+  .halfbleed img {
+    width: 100%;
+    height: 56vh;
+    min-height: 320px;
+    max-height: 620px;
+    object-fit: cover;
+    display: block;
+  }
+
+  .sauce-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  @media (min-width: 1024px) {
+    .sauce-layout {
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+  }
+  .sauce-rightbleed { margin: 0; }
+  .sauce-rightbleed img {
+    width: 100%;
+    height: auto;
+    max-height: 720px;
+    object-fit: cover;
+    display: block;
+  }
+  @media (min-width: 1024px) {
+    .sauce-rightbleed { margin-right: calc(50% - 50vw); }
+    .sauce-rightbleed img { height: 64vh; min-height: 420px; }
+  }
+
+  .inset {
+    width: 100%;
+    max-width: 420px;
+    margin: 4px 0 18px 0;
+    display: block;
+  }
+  .inset img { width: 100%; height: auto; display: block; }
+  .inset figcaption {
+    font-family: var(--sans);
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-top: 8px;
+    line-height: 1.4;
+  }
+  .inset figcaption .n {
+    color: var(--accent-2);
+    font-weight: 600;
+    margin-right: 8px;
+  }
+  .tipin {
+    width: 100%;
+    max-width: 360px;
+    margin: 0 0 24px 0;
+    transform: rotate(-1.2deg);
+  }
+  .tipin img { width: 100%; height: auto; display: block; }
+
+  .caption {
+    font-family: var(--sans);
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    text-align: left;
+    margin: 14px auto 56px;
+    max-width: var(--frame);
+    padding: 0 28px;
+    line-height: 1.5;
+    font-variation-settings: "opsz" 14;
+  }
+  .caption .n {
+    color: var(--accent-2);
+    font-weight: 600;
+    margin-right: 12px;
+  }
+
+  /* INGREDIENTS */
+  .ing-label {
+    font-family: var(--sans);
+    font-size: 11px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 600;
+    margin: 24px 0 8px 0;
+  }
+  .ing-label:first-child { margin-top: 0; }
+
+  .qty-list { margin: 8px 0 8px 0; padding: 0; list-style: none; }
+  .qty-list li {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    padding: 5px 0;
+  }
+  .qty-list li .name { flex: 0 0 auto; }
+  .qty-list li .leader {
+    flex: 1 1 auto;
+    border-bottom: 1px dotted var(--rule);
+    transform: translateY(-5px);
+    margin: 0 6px;
+  }
+  .qty-list li .qty {
+    flex: 0 0 auto;
+    font-variant-numeric: oldstyle-nums;
+    font-style: italic;
+    color: var(--ink-soft);
+  }
+
+  .tab-list { margin: 8px 0 8px 0; padding: 0; list-style: none; }
+  .tab-list li {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 18px;
+    padding: 5px 0;
+    align-items: baseline;
+  }
+  .tab-list li .name { font-family: var(--serif); }
+  .tab-list li .qty {
+    font-variant-numeric: tabular-nums oldstyle-nums;
+    font-style: italic;
+    color: var(--ink-soft);
+    text-align: right;
+    min-width: 7ch;
+  }
+
+  .pantry-para {
+    font-style: italic;
+    color: var(--ink-soft);
+    font-size: 0.98em;
+    margin: 6px 0 0 0;
+  }
+
+  /* METHOD: pans (3 here) */
+  .pans { margin-top: 32px; }
+  .pan {
+    position: relative;
+    margin: 0 0 56px 0;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  .pan .panhead {
+    display: flex;
+    align-items: baseline;
+    gap: 18px;
+    margin-bottom: 10px;
+  }
+  .pan .pannum {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-style: italic;
+    font-size: 64px;
+    line-height: 0.9;
+    color: var(--accent-2);
+    font-variation-settings: "opsz" 60;
+  }
+  .pan h3 {
+    font-family: var(--serif);
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 1.2;
+    margin: 0;
+    color: var(--ink);
+  }
+  @media (min-width: 1200px) {
+    .pan .panhead { display: block; }
+    .pan .pannum {
+      position: absolute;
+      left: -110px;
+      top: -8px;
+      font-size: 110px;
+    }
+    .pan h3 { display: block; }
+  }
+  .pan p { margin: 0 0 0.8em 0; }
+
+  /* SAUCE 4-UP */
+  .sauce-spread {
+    max-width: var(--frame);
+    margin: 0 auto;
+    padding: 0 28px;
+  }
+  .sauce-spread h2.display {
+    text-align: left;
+    max-width: 14ch;
+    margin-bottom: 24px;
+  }
+  .sauce-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 32px;
+    margin-top: 32px;
+  }
+  @media (min-width: 720px) {
+    .sauce-grid {
+      grid-template-columns: 1.6fr 1fr 1fr 1fr;
+      gap: 28px;
+      align-items: start;
+    }
+    .move.feature { padding-top: 20px; }
+    .move.offset  { margin-top: 24px; }
+  }
+  .move {
+    border-top: 1px solid var(--accent-2);
+    padding-top: 14px;
+  }
+  .move .mvn {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 400;
+    font-size: 64px;
+    line-height: 1;
+    color: var(--accent-2);
+    display: block;
+    margin-bottom: 6px;
+    font-variation-settings: "opsz" 60;
+  }
+  .move.feature .mvn { font-size: 96px; }
+  .move .mvl {
+    font-family: var(--sans);
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--accent-2);
+    font-weight: 600;
+    display: block;
+    margin-bottom: 10px;
+  }
+  .move p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 0;
+  }
+  .move.feature p { font-size: 17px; }
+  @media (max-width: 719px) {
+    .move .mvn { display: none; }
+    .move {
+      border-top: none;
+      padding-top: 0;
+      padding-left: 0;
+    }
+    .move .mvl {
+      font-size: 12px;
+      border-top: 1px solid var(--accent-2);
+      padding-top: 10px;
+    }
+  }
+
+  .hairline {
+    width: 80px;
+    height: 1px;
+    background: var(--accent-2);
+    margin: 56px auto;
+    border: 0;
+  }
+
+  .bringing {
+    max-width: var(--col);
+    margin: 96px auto 0;
+    padding: 0 28px;
+  }
+  .bringing p { font-size: 1.02em; line-height: 1.6; }
+
+  .notes-block {
+    max-width: var(--frame);
+    margin: 120px auto 0;
+    padding: 0 28px;
+  }
+  .notes-block .ref { margin-bottom: 32px; }
+  .notes-grid { display: grid; grid-template-columns: 1fr; gap: 36px; }
+  @media (min-width: 720px) {
+    .notes-grid { grid-template-columns: repeat(3, 1fr); gap: 40px; }
+  }
+  .notes-grid h3 {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 400;
+    font-size: 20px;
+    margin: 0 0 8px 0;
+    color: var(--ink);
+  }
+  .notes-grid p {
+    font-size: 16px;
+    line-height: 1.55;
+    margin: 0 0 0.8em 0;
+    color: var(--ink);
+  }
+  .notes-grid .imperatives {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-family: var(--serif);
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  .notes-grid .imperatives li {
+    padding: 6px 0;
+    border-bottom: 1px dotted var(--rule);
+  }
+  .notes-grid .imperatives li:last-child { border-bottom: none; }
+
+  .closing {
+    margin: 100px auto 40px;
+    text-align: center;
+  }
+  .closing p {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 1.05em;
+    color: var(--ink-soft);
+    max-width: 50ch;
+    margin: 0 auto 28px;
+    line-height: 1.6;
+  }
+  .signoff {
+    font-family: var(--hand);
+    font-size: 40px;
+    color: var(--accent);
+    margin: 12px 0 80px;
+    line-height: 1.2;
+    display: inline-block;
+    padding: 6px 16px;
+    transform: rotate(-3deg) translateX(-12px);
+    transform-origin: left center;
+  }
+
+  /* aside warning section */
+  .aside-block {
+    max-width: var(--col);
+    margin: 0 auto;
+    padding: 0 28px;
+  }
+  .aside-block p { margin-top: 12px; }
+  .aside-block b { font-weight: 600; color: var(--ink); }
+
+  @media (max-width: 720px) {
+    body { font-size: 18px; line-height: 1.6; }
+    .hero { height: 88vh; height: 88svh; min-height: 460px; }
+    .title-block { padding: 60px 22px 16px; }
+    .meta { font-size: 11px; letter-spacing: 0.18em; }
+    .intro { margin-top: 56px; }
+    .intro p:first-child::first-letter { font-size: 4.4em; padding-right: 10px; }
+    .bleed img { height: 60vh; min-height: 280px; }
+    .halfbleed img { height: 44vh; min-height: 240px; }
+    .pan .pannum { font-size: 56px; }
+    .pan h3 { font-size: 22px; }
+    .signoff { font-size: 34px; }
+    .qty-list li { flex-wrap: wrap; }
+    .qty-list li .leader { display: none; }
+    .qty-list li .qty { margin-left: auto; }
+    .narrative-gap { margin-top: 88px; }
+    .closing { margin-top: 96px; }
+  }
+  @media (min-width: 1280px) {
+    .bleed img { max-height: 880px; }
+  }
+
+  @media print {
+    :root { --paper: #ffffff; --ink: #1a120c; }
+    body { background: #fff; font-size: 11pt; line-height: 1.5; }
+    .hero { display: none; }
+    .bleed, .halfbleed { margin-top: 12pt; margin-bottom: 6pt; }
+    .bleed img, .halfbleed img, .inset img, .tipin img, .sauce-rightbleed img {
+      height: auto;
+      max-height: 2.2in;
+      min-height: 0;
+      width: auto;
+      max-width: 100%;
+    }
+    .caption { margin-bottom: 12pt; }
+    .kicker { margin-top: 18pt; }
+    h1 { font-size: 28pt; }
+    h2.display { font-size: 18pt; }
+    .pan, .move, .notes-grid > * { page-break-inside: avoid; }
+    .sauce-grid { page-break-inside: avoid; }
+    .signoff { font-size: 24pt; }
+    a { color: var(--ink); text-decoration: none; }
+    .rail { display: none; }
+  }
+</style>
+</head>
+<body>
+<main>
+
+<!-- ============ HERO ============ -->
+<figure class="hero">
+  <img src="../images/valadi-soup/01-hero.png" alt="Overhead bowl of greenish-brown oxtail soup with a piece of oxtail on top, steam rising, on green linen" width="2000" height="1125" fetchpriority="high" decoding="async" />
+</figure>
+
+<header class="title-block col">
+  <div class="eyebrow">for Mum's kitchen</div>
+  <h1>Mum's Anglo-Indian Oxtail<span class="slash">/</span>Valadi Soup</h1>
+  <p class="dek">The greenish-brown one &mdash; the way you used to make it on cold nights.</p>
+  <div class="meta">
+    <span>Serves 4</span>
+    <span>Prep 15 min</span>
+    <span>Cook 35 min</span>
+  </div>
+</header>
+
+<!-- ============ INTRO ============ -->
+<section class="col intro">
+  <p>Mum &mdash; this is the greenish-brown one. I asked you once, when I was small, why it wasn't red like the soup at other people's houses, and I remember thinking it must be a herb that turned the broth that colour. You said no, it's the whole spices and the green chilli and the curry leaves and the turmeric, and never tomato. I've been carrying that answer around for twenty-odd years. I'm writing it down now so the next time someone asks me, I don't have to ring you to check.</p>
+
+  <p>Valadi means the bottom of the tail &mdash; oxtail &mdash; in the Tamil-Malayalam patois we grew up on, and you'll know the dish the second you read the name. This isn't the tomato-heavy English oxtail soup people think of when you say it in Australia. It's the other one: peppery, lightly spiced, sharp with curry leaf and clean down the back of the throat.</p>
+</section>
+
+<hr class="hairline" />
+
+<!-- ============ INGREDIENTS ============ -->
+<section class="frame narrative-gap">
+  <div class="body">
+    <div class="kicker">What goes in</div>
+    <h2 class="ref">Ingredients</h2>
+    <p class="section-lede">Two parts: the cooker (everything spiced and simmered) and the tadka (fried at the very end and stirred through). <em>Whole spices, not ground.</em></p>
+
+    <h3 class="ing-label">The main</h3>
+    <ul class="qty-list">
+      <li><span class="name">Oxtail / valadi</span><span class="leader"></span><span class="qty">1 kg</span></li>
+      <li><span class="name">Cloves</span><span class="leader"></span><span class="qty">4</span></li>
+      <li><span class="name">Green cardamom pods</span><span class="leader"></span><span class="qty">4</span></li>
+      <li><span class="name">Cinnamon stick</span><span class="leader"></span><span class="qty">2 inch</span></li>
+      <li><span class="name">Whole black peppercorns</span><span class="leader"></span><span class="qty">1 tsp</span></li>
+      <li><span class="name">Bay leaf (optional)</span><span class="leader"></span><span class="qty">1</span></li>
+      <li><span class="name">Ginger, crushed</span><span class="leader"></span><span class="qty">2 inch</span></li>
+      <li><span class="name">Garlic, crushed</span><span class="leader"></span><span class="qty">6 cloves</span></li>
+      <li><span class="name">Green chillies, slit</span><span class="leader"></span><span class="qty">2</span></li>
+      <li><span class="name">Turmeric</span><span class="leader"></span><span class="qty">1/2 tsp</span></li>
+      <li><span class="name">Salt</span><span class="leader"></span><span class="qty">to taste</span></li>
+      <li><span class="name">Water</span><span class="leader"></span><span class="qty">to cover</span></li>
+    </ul>
+
+    <h3 class="ing-label">The tadka</h3>
+    <ul class="qty-list">
+      <li><span class="name">Onion, sliced</span><span class="leader"></span><span class="qty">1 large</span></li>
+      <li><span class="name">Fresh curry leaves</span><span class="leader"></span><span class="qty">15-20</span></li>
+      <li><span class="name">Ghee or oil</span><span class="leader"></span><span class="qty">2 tbsp</span></li>
+      <li><span class="name">Pepper powder</span><span class="leader"></span><span class="qty">1 tsp</span></li>
+      <li><span class="name">Turmeric (optional)</span><span class="leader"></span><span class="qty">1/4 tsp</span></li>
+      <li><span class="name">Chilli flakes (optional)</span><span class="leader"></span><span class="qty">1/2 tsp</span></li>
+      <li><span class="name">Garam masala (to finish)</span><span class="leader"></span><span class="qty">1/2 tsp</span></li>
+    </ul>
+  </div>
+
+  <aside class="rail">
+    <div class="shopnote">
+      <span class="lbl">From Woolies</span>
+      Oxtail can be hard to find &mdash; bone-in soup pieces work, plus a couple of beef chuck chunks. Aim for ~1 kg total.
+    </div>
+    <div class="timestrip">
+      <span class="lbl">Timeline</span>
+      <ol>
+        <li>One whistle, high<span class="t">listen for it</span></li>
+        <li>Low simmer<span class="t">10-15 min</span></li>
+        <li>Natural release<span class="t">~10 min</span></li>
+        <li>Tadka<span class="t">~5 min</span></li>
+      </ol>
+    </div>
+    <div class="handnote">
+      <span class="lbl">A note from me &mdash;</span>
+      Buy whole spices &mdash; pre-ground loses the warmth this soup needs.
+    </div>
+    <div class="note">
+      <span class="lbl">Ghee vs oil</span>
+      Ghee gives the tadka a rounder, nuttier finish; a neutral oil keeps it sharper. Either works &mdash; you used both depending on the day.
+    </div>
+  </aside>
+</section>
+
+<!-- ============ MISE EN PLACE: half-bleed ============ -->
+<figure class="halfbleed">
+  <img src="../images/valadi-soup/03-mise-en-place.png" alt="Flat lay of whole spices: cloves, cardamom, cinnamon, peppercorns, turmeric, pepper powder, ginger, garlic, green chilli, curry leaves and bay" width="1920" height="1080" loading="lazy" decoding="async" />
+</figure>
+<p class="caption"><span class="n">03</span>Whole spices &mdash; lay them out before the cooker goes on.</p>
+
+<!-- ============ FIRST, THE COOK ============ -->
+<section class="frame narrative-gap">
+  <div class="body">
+    <div class="kicker">First, the cook</div>
+    <h2 class="display">The three pans</h2>
+    <p class="section-lede">Toss the meat with the aromatics, pressure cook with the whole spices, then make the tadka while the cooker rests.</p>
+
+    <div class="pans">
+
+      <article class="pan">
+        <div class="panhead">
+          <span class="pannum">1</span>
+          <h3>Toss with the spices</h3>
+        </div>
+        <figure class="inset">
+          <img src="../images/valadi-soup/04-prepped-oxtail.png" alt="Raw oxtail in a dark steel bowl tossed with ginger, garlic, green chilli and turmeric" width="1600" height="1200" loading="lazy" decoding="async" />
+          <figcaption><span class="n">01</span>The first coat &mdash; ginger, garlic, chilli, turmeric.</figcaption>
+        </figure>
+        <p>In a steel bowl combine the oxtail with the crushed ginger, the crushed garlic, the slit green chillies, the turmeric and a good pinch of salt. Toss with your hands until every piece is properly coated &mdash; the turmeric should look uneven, that's fine, it'll bloom out as it cooks. Let it sit ten minutes if you have the time, or go straight to the cooker if you don't. The marinade is forgiving here; the heat does most of the work.</p>
+      </article>
+
+      <article class="pan">
+        <div class="panhead">
+          <span class="pannum">2</span>
+          <h3>Pressure cook</h3>
+        </div>
+        <figure class="inset">
+          <img src="../images/valadi-soup/05-pressure-cooker.png" alt="Top-down view into an open pressure cooker with oxtail, whole spices and ginger and garlic, just covered with water" width="1600" height="1200" loading="lazy" decoding="async" />
+          <figcaption><span class="n">02</span>Just covered with water &mdash; no more.</figcaption>
+        </figure>
+        <p>Tip everything into a pressure cooker &mdash; the spiced oxtail, the cloves, the cardamom pods, the cinnamon stick, the peppercorns, the bay leaf if you're using one. Pour in water just to cover the meat, no more &mdash; the broth concentrates as it cooks and you don't want it thin. Lid on, weight on. One whistle on high heat &mdash; listen for it. The moment it blows, drop the heat to low and cook another ten to fifteen minutes. Take it off and let the pressure release naturally; opening early can leave the meat tough and the flavour flat.</p>
+      </article>
+
+      <article class="pan">
+        <div class="panhead">
+          <span class="pannum">3</span>
+          <h3>The tadka</h3>
+        </div>
+        <figure class="inset">
+          <img src="../images/valadi-soup/07-tadka.png" alt="Onion and curry leaves frying in a steel kadai, a hand scattering pepper powder, steam rising" width="1600" height="1200" loading="lazy" decoding="async" />
+          <figcaption><span class="n">03</span>Pepper powder off the heat &mdash; never in the pan.</figcaption>
+        </figure>
+        <p>While the cooker rests, heat the ghee or oil in a small kadai. Slide in the sliced onion and the curry leaves &mdash; they'll spit and crackle, that's the point. Cook the onion through to a deep amber and the curry leaves until they're glossy and slightly crisp. Pull the pan off the heat, scatter in the pepper powder and (if you're using them) a pinch of turmeric and chilli flakes &mdash; off the heat, always, or the pepper goes bitter. Pour the entire pan, oil and all, into the open soup and stir through. Simmer briefly so the seasoning blends. Finish with garam masala on top.</p>
+      </article>
+
+    </div>
+  </div>
+
+  <aside class="rail">
+    <div class="pullside">Listen for the whistle &mdash; it's the only timer you need.</div>
+    <div class="warn">
+      <span class="lbl">a small warning</span>
+      <b>Don't open the cooker early.</b> The meat will be tough and the flavour flat.
+    </div>
+    <div class="note">
+      <span class="lbl">Same pot</span>
+      The whole spices stay in for the whole cook &mdash; fish them out at the end if you like, or eat around them.
+    </div>
+  </aside>
+</section>
+
+<!-- ============ THEN, THE TADKA (4-up technique) ============ -->
+<section class="sauce-spread narrative-gap">
+  <div class="kicker">Then, the tadka</div>
+  <h2 class="display">The tadka, in four moves</h2>
+  <p class="section-lede" style="max-width: 56ch;">This is the part that decides the soup. Small kadai, hot fat, off the heat for the powder spices &mdash; in that order, every time.</p>
+
+  <div class="sauce-layout">
+    <div class="sauce-grid">
+      <div class="move feature">
+        <span class="mvn">i</span>
+        <span class="mvl">Heat</span>
+        <p>Ghee or oil in a small kadai over medium-high. Let it shimmer before anything goes in &mdash; a cool pan turns the curry leaves limp instead of crisp, and the onion stews instead of browning.</p>
+      </div>
+      <div class="move">
+        <span class="mvn">ii</span>
+        <span class="mvl">Onion + curry leaves</span>
+        <p>Slide them in together. Onion through to a deep amber, leaves glossy and crisp at the edges. They'll spit and crackle &mdash; that's the point.</p>
+      </div>
+      <div class="move offset">
+        <span class="mvn">iii</span>
+        <span class="mvl">Off the heat</span>
+        <p>Always off the heat before the powder spices, or the pepper turns bitter. Scatter the pepper powder, an optional pinch of turmeric and chilli flakes.</p>
+      </div>
+      <div class="move">
+        <span class="mvn">iv</span>
+        <span class="mvl">Pour and finish</span>
+        <p>Tip the entire pan, oil and all, into the soup. Stir through. Finish with garam masala on top.</p>
+      </div>
+    </div>
+    <figure class="sauce-rightbleed">
+      <img src="../images/valadi-soup/07-tadka.png" alt="Onion and curry leaves frying in a steel kadai with a hand scattering pepper powder" width="1600" height="1067" loading="lazy" decoding="async" />
+    </figure>
+  </div>
+</section>
+
+<!-- ============ BRINGING IT TOGETHER ============ -->
+<section class="bringing">
+  <div class="kicker">Bringing it together</div>
+  <p>Ladle into deep bowls. Spoon a piece of oxtail onto each one &mdash; the marrow is the prize, don't lose it to the bottom of the pot. Scatter a few extra fried curry leaves and a dust of garam masala over the top. <em>Bread on the side, or rice when it's just you.</em></p>
+</section>
+
+<!-- ============ HALF-BLEED TRANSITION ============ -->
+<figure class="halfbleed">
+  <img src="../images/valadi-soup/08-curry-leaves.png" alt="Flat lay of curry leaf stems, a mound of garam masala, pepper powder in a ramekin, slit green chilli and cloves on linen and oak" width="2000" height="1125" loading="lazy" decoding="async" />
+</figure>
+<p class="caption"><em>Curry leaves, garam masala, the pepper &mdash; the smell of your kitchen.</em></p>
+
+<!-- ============ ASIDE: WHOLE SPICES ============ -->
+<section class="frame narrative-gap">
+  <div class="body">
+    <div class="kicker">A small warning</div>
+    <h2 class="aside">whole spices, never pre-ground</h2>
+    <figure class="tipin">
+      <img src="../images/valadi-soup/06-whole-spices.png" alt="Macro close-up of cloves, cracked cardamom, cinnamon, peppercorns, bay and slit green chilli on linen" width="1600" height="1200" loading="lazy" decoding="async" />
+      <figcaption><em>the spice base &mdash; whole, never pre-ground.</em></figcaption>
+    </figure>
+    <p><b>The warmth in this soup comes from spices that were whole when they hit the pot.</b> Pre-ground cloves, ground cardamom, ground cinnamon &mdash; they oxidise on the shelf, lose the volatile oils that carry the perfume, and what's left is dust. Buy whole. Crack the cardamom in your fingers as it goes in.</p>
+  </div>
+
+  <aside class="rail">
+    <div class="note">
+      <span class="lbl">Pepper, coarse</span>
+      Freshly ground black pepper, coarse rather than fine &mdash; the heat is more honest, and you can see it sitting on the broth.
+    </div>
+    <div class="note">
+      <span class="lbl">Cardamom</span>
+      Crack the green pods between your fingers as they go in &mdash; the seeds need to be exposed for the perfume to come out.
+    </div>
+    <div class="handnote">
+      <span class="lbl">A note from me &mdash;</span>
+      A jar of whole spices keeps a year. A jar of pre-ground keeps a fortnight before it tastes like nothing.
+    </div>
+  </aside>
+</section>
+
+<hr class="hairline" />
+
+<!-- ============ NOTES FOOTER ============ -->
+<section class="notes-block">
+  <h2 class="ref">Notes</h2>
+  <div class="notes-grid">
+
+    <div>
+      <h3>The imperatives</h3>
+      <ul class="imperatives">
+        <li>One whistle, then low for ten to fifteen.</li>
+        <li>Always use whole spices.</li>
+        <li>Open the cooker only when it's fully released.</li>
+        <li>Tadka last, or the curry leaves go bitter.</li>
+      </ul>
+    </div>
+
+    <div>
+      <h3>Texture rescue</h3>
+      <p>Broth too thin &mdash; simmer with the lid off ten minutes and it tightens up. Too peppery &mdash; a splash of cream or coconut milk softens it without dulling the spice.</p>
+    </div>
+
+    <div>
+      <h3>How you know it's right</h3>
+      <ul class="imperatives">
+        <li>Colour: greenish-brown, never red.</li>
+        <li>Texture: meat slides off the bone with a spoon.</li>
+        <li>Heat: peppery on the back of the throat, not chilli-hot up front.</li>
+        <li>Salt: under rather than over &mdash; the broth tightens overnight.</li>
+      </ul>
+    </div>
+
+    <div>
+      <h3>Serve with</h3>
+      <p>Bread, rice, or a hot mug on its own when the night turns cold.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ CLOSING PAYOFF BLEED ============ -->
+<figure class="bleed">
+  <img src="../images/valadi-soup/02-spoon-lift.png" alt="A spoon lifting a piece of oxtail from the broth, brass pepper grinder in the background" width="2000" height="1125" loading="lazy" decoding="async" />
+</figure>
+<p class="caption"><em>The spoon lift &mdash; marrow, broth, a piece of the tail.</em></p>
+
+<!-- ============ CLOSING ============ -->
+<section class="col closing">
+  <p>The kitchen smells the way your kitchen used to smell when the curry leaves hit the hot ghee &mdash; that's how I know I've done it right. The soup tastes better the next day, after a night in the fridge, the spices settling deeper into the broth. <em>If you're not sure on the tadka timing, ring me &mdash; I still don't trust myself on it either, but two of us listening to the pan is better than one.</em></p>
+  <div class="signoff">for Mum &mdash; Aalan</div>
+</section>
+
+</main>
+</body>
+</html>
