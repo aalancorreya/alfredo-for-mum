@@ -742,9 +742,37 @@
     a { color: var(--ink); text-decoration: none; }
     .rail { display: none; }
   }
+
+  /* persistent back-nav to landing */
+  .back-nav {
+    position: fixed;
+    top: 22px;
+    left: 28px;
+    z-index: 100;
+    font-family: var(--sans);
+    font-size: 11px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--ink);
+    font-weight: 500;
+    text-decoration: none;
+    padding: 8px 14px;
+    background: rgba(245, 236, 220, 0.85);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-radius: 999px;
+    transition: background 0.2s ease, transform 0.2s ease;
+  }
+  .back-nav:hover { background: rgba(245, 236, 220, 1); transform: translateX(-2px); }
+  .back-nav .arrow { margin-right: 6px; color: var(--accent-2); }
+  @media (max-width: 720px) {
+    .back-nav { top: 12px; left: 12px; font-size: 10px; padding: 6px 12px; letter-spacing: 0.28em; }
+  }
+  @media print { .back-nav { display: none; } }
 </style>
 </head>
 <body>
+<a class="back-nav" href="../index.html"><span class="arrow">&larr;</span> Recipes for Mum</a>
 <main>
 
 <!-- ============ HERO ============ -->
